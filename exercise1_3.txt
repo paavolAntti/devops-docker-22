@@ -1,0 +1,30 @@
+Script started on 2022-02-22 12:27:51+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="209" LINES="51"]
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker images[1Pps -aimages[Kdocker run -d devopsdockeruh/simple-web-service:ubuntu
+1d11efa2e8120680a7eb0f6b2a5eaa8f79d6fac25209f1d5b382da26712d696f
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker ps -a
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED              STATUS                      PORTS     NAMES
+1d11efa2e812   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   4 seconds ago        Up 4 seconds                          optimistic_vaughan
+0466a69bbee8   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   About a minute ago   Exited (2) 46 seconds ago             happy_goodall
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker exec 1d11 /ni[K[Kbin/sh
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker exec 1d11 /bin/sh[1@-[1@i[1@t[1@ 
+# tail -f ./te	 x ext	.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 10:29:04 +0000 UTC
+2022-02-22 10:29:06 +0000 UTC
+2022-02-22 10:29:08 +0000 UTC
+2022-02-22 10:29:10 +0000 UTC
+2022-02-22 10:29:12 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 10:29:14 +0000 UTC
+2022-02-22 10:29:16 +0000 UTC
+2022-02-22 10:29:18 +0000 UTC
+2022-02-22 10:29:20 +0000 UTC
+2022-02-22 10:29:22 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 10:29:24 +0000 UTC
+2022-02-22 10:29:26 +0000 UTC
+^C
+# exit
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ exit
+
+Script done on 2022-02-22 12:29:31+02:00 [COMMAND_EXIT_CODE="130"]

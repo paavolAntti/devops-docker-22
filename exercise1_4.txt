@@ -1,0 +1,17 @@
+Script started on 2022-02-22 12:42:37+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="209" LINES="51"]
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker run -t [K[Kit ubuntu sh -c 'apt-get -y update [K; apt-get -y p[Kupgrade; apt-get -y install curl; echo "Input website; echo[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@:[1@"[C[C[C echor echoe echoa echod echo[C echow echoe echob echos echoi echot echoe echo; echo[C[C[C[C[C "Sera[K[Karching.."; sp[Kleep 1; curl htt 
+p://$website;'
+
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ exit
+
+Script done on 2022-02-22 12:47:40+02:00 [COMMAND_EXIT_CODE="0"]

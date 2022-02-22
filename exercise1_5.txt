@@ -1,0 +1,46 @@
+Script started on 2022-02-22 12:51:15+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="209" LINES="51"]
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ doxc[K[Kx[Kcker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+
+[1A[2Kba3557a56b15: Pulling fs layer [1B
+[1A[2K1dace236434b: Pulling fs layer [1B
+[1A[2K4f4fb700ef54: Pulling fs layer [1B[3A[2Kba3557a56b15: Downloading [>                                                  ]  28.75kB/2.812MB[3B[2A[2K1dace236434b: Downloading [>                                                  ]  51.93kB/5.117MB[2B[1A[2K4f4fb700ef54: Downloading [==================================================>]      32B/32B[1B[1A[2K4f4fb700ef54: Verifying Checksum [1B[1A[2K4f4fb700ef54: Download complete [1B[3A[2Kba3557a56b15: Downloading [=====================>                             ]  1.227MB/2.812MB[3B[2A[2K1dace236434b: Downloading [===>                                               ]  344.1kB/5.117MB[2B[3A[2Kba3557a56b15: Downloading [============================================>      ]  2.476MB/2.812MB[3B[3A[2Kba3557a56b15: Downloading [==================================================>]  2.812MB/2.812MB[3B[3A[2Kba3557a56b15: Verifying Checksum [3B[3A[2Kba3557a56b15: Extracting [>                                                  ]  32.77kB/2.812MB[3B[2A[2K1dace236434b: Downloading [==========>                                        ]  1.063MB/5.117MB[2B[3A[2Kba3557a56b15: Extracting [===============================================>   ]  2.687MB/2.812MB[3B[3A[2Kba3557a56b15: Extracting [==================================================>]  2.812MB/2.812MB[3B[3A[2Kba3557a56b15: Pull complete [3B[2A[2K1dace236434b: Downloading [=====================>                             ]  2.243MB/5.117MB[2B[2A[2K1dace236434b: Downloading [==================================>                ]  3.541MB/5.117MB[2B[2A[2K1dace236434b: Verifying Checksum [2B[2A[2K1dace236434b: Download complete [2B[2A[2K1dace236434b: Extracting [>                                                  ]  65.54kB/5.117MB[2B[2A[2K1dace236434b: Extracting [================================>                  ]  3.342MB/5.117MB[2B[2A[2K1dace236434b: Extracting [==================================================>]  5.117MB/5.117MB[2B[2A[2K1dace236434b: Pull complete [2B[1A[2K4f4fb700ef54: Extracting [==================================================>]      32B/32B[1B[1A[2K4f4fb700ef54: Extracting [==================================================>]      32B/32B[1B[1A[2K4f4fb700ef54: Pull complete [1BDigest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+ubuntu                              latest    54c9d81cbb44   2 weeks ago     72.8MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   11 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   11 months ago   15.7MB
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docx[Kc[Kker run devopsdockeruh/simple-web-service:alpine-devopsdockeruh/simple-web-service:alpine[Cdevopsdockeruh/simple-web-service:alpine devopsdockeruh/simple-web-service:alpine[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+bf2bbe61b9a75d9da351af1a7a3d6d3ba83da9e75e9e1f1f9f2ffa0a4357c1b1
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ doxck[K[K[K[K[Kdor[Kx[Kcker -[Kps -a
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+bf2bbe61b9a7   devopsdockeruh/simple-web-service:alpine   "/usr/src/app/server"   6 seconds ago   Up 5 seconds             fervent_snyder
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker exec bdf[K[Kf /binh[K/sh[1@-[1@i[1@t[C[1P[1P[1P[C[C[C[C[C[1@ [1@-[1@t[1P[1@i[1@t[C
+/usr/src/app # [6n/usr/src/app # [Jtail -f ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 10:53:09 +0000 UTC
+2022-02-22 10:53:11 +0000 UTC
+2022-02-22 10:53:13 +0000 UTC
+2022-02-22 10:53:15 +0000 UTC
+2022-02-22 10:53:17 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 10:53:19 +0000 UTC
+2022-02-22 10:53:21 +0000 UTC
+2022-02-22 10:53:23 +0000 UTC
+2022-02-22 10:53:25 +0000 UTC
+2022-02-22 10:53:27 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2022-02-22 10:53:29 +0000 UTC
+2022-02-22 10:53:31 +0000 UTC
+^C
+/usr/src/app # [6nexit
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ exit
+
+Script done on 2022-02-22 12:53:35+02:00 [COMMAND_EXIT_CODE="130"]
