@@ -1,0 +1,15 @@
+Script started on 2022-02-22 14:55:42+02:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="204" LINES="51"]
+]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ docker run -p 3003:800[K80 web-serveer[K[Kr
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/02/22 - 12:56:19 | 200 |        32.6µs |      172.17.0.1 | GET      "/"
+[GIN] 2022/02/22 - 12:56:19 | 200 |        14.2µs |      172.17.0.1 | GET      "/favicon.ico"
+^C]0;antti@anttiPC: ~/studies/devops-docker-22[01;32mantti@anttiPC[00m:[01;34m~/studies/devops-docker-22[00m$ exit
+
+Script done on 2022-02-22 14:56:37+02:00 [COMMAND_EXIT_CODE="2"]
