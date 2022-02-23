@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    backend:
+        image: backend2_4
+        build: ../exercise2_3/backend/
+        environment:
+          - REDIS_HOST=redis-service
+        ports:
+          - 8080:8080
+    
+    frontend:
+      image: frontend2_4
+      build: ../exercise2_3/frontend/
+      ports:
+        - 5000:5000
+
+    redis:
+      image: redis
+      restart: unless-stopped
+      container_name: redis-service
