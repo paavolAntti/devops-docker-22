@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+    backend:
+        image: backend2_5
+        build: ../exercise2_3/backend/
+        environment:
+          - REDIS_HOST=redis-service
+          - POSTGRES_HOST=db_exercise2_6
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+          - POSTGRES_DATABASE=postgres
+        depends_on:
+            - db
+        ports:
+          - 8080:8080
+    
+    frontend:
+        image: frontend2_5
+        build: ../exercise2_3/frontend/
+        ports:
+            - 5000:5000
+
+    redis:
+        image: redis
+        restart: unless-stopped
+        container_name: redis-service
+    
+    db:
+        image: postgres:13.2-alpine
+        restart: unless-stopped
+        environment:
+            - POSTGRES_PASSWORD=postgres
+        volumes:
+            - database:/var/lib/postgresql/data
+        container_name: db_exercise2_6
+
+volumes:
+    database:    
+
