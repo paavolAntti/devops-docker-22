@@ -1,0 +1,9 @@
+I had NodeJS backend for keeping track of lendable devices. The application uses MariaDB as database.
+Before both of these environments were running on my local machine. For this exercise I wrote Dockerfile for the
+NodeJS & Express API and docker-compose.yml to handle the database connection to the API development container.
+On top of this i configured phpMyAdmin-container for easy database access which makes debugging more userfriendly.
+
+NodeJS-container shares a volume in local computer so it can be developed in local machine and run on the container
+environment. All the containers run in same docker-network so they can talk to each other.
+
+Dockerfile and docker-compose.yml for this project are located in this folder.

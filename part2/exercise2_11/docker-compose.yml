@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+    device-api:
+        image: device-api-image
+        build: ./ictlab-device-api
+        ports:
+            - 3003:3003
+        environment:
+            - DB_HOST=mariadb
+            - DB_USER=root
+            - DB_PASSWORD=password
+            - DB_NAME=ictlab_devices
+        depends_on:
+            - mariadb
+        volumes:
+            - ./device-api:/usr/src/app
+        networks:
+            - api-network
+
+    mariadb:
+        image: mariadb
+        restart: unless-stopped
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+        volumes:
+            - database:/var/lib/mysql
+            - ./ictlab-devices.sql:/docker-entrypoint-initdb.d/ictlab-devices.sql
+        networks:
+            - api-network
+    
+    phpmyadmin:
+        image: phpmyadmin
+        restart: unless-stopped
+        ports:
+            - 8080:80
+        environment:
+            - PMA_ARBITRARY=1
+        networks:
+            - api-network
+volumes:
+    database:
+
+networks:
+    api-network:
+        name: api-network

@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+
+    reverse-proxy:
+        image: nginx
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+        ports:
+          - 80:80
+        networks:
+            - default_network2_9
+        depends_on:
+            - frontend
+            - backend
+    backend:
+        image: backend2_9
+        build: ./backend/
+        environment:
+          - REDIS_HOST=redis-service2_9
+          - POSTGRES_HOST=db_exercise2_9
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+          - POSTGRES_DATABASE=postgres
+        depends_on:
+            - db
+            - redis
+        networks:
+            - default_network2_9
+        container_name: backend2_9
+
+    frontend:
+        image: frontend2_9
+        build: ./frontend/
+        networks:
+            - default_network2_9
+        container_name: frontend2_9
+        depends_on:
+            - backend
+
+    redis:
+        image: redis
+        restart: unless-stopped
+        container_name: redis-service2_9
+        networks:
+            - default_network2_9
+        volumes:
+            - ./redisdb:/data
+    
+    db:
+        image: postgres:13.2-alpine
+        restart: unless-stopped
+        environment:
+            - POSTGRES_PASSWORD=postgres
+        volumes:
+            - ./database:/var/lib/postgresql/data
+        container_name: db_exercise2_9
+        networks:
+            - default_network2_9
+
+networks:
+    default_network2_9:
+        name: default_network2_9
+
+# To get buttons working with reverse proxy the frontend and backend dockerfiles
+# had to be altered: removed the environment variables REACT_APP_BACKEND_URL from frontend-dockerfile
+# and REQUEST_ORIGIN from backend-dockerfile so that the reverse proxy redirects traffic correctly

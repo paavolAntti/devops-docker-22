@@ -19,3 +19,8 @@ services:
       image: redis
       restart: unless-stopped
       container_name: redis-service
+      volumes:
+            - redisdb:/data
+
+volumes:
+  redisdb:
