@@ -1,0 +1,14 @@
+# Pull python3-alpine image
+FROM python:3-alpine
+# Set working directory
+WORKDIR /usr/src/app
+# Install necessary tools: g++-compiler,CMake
+RUN apk update && apk add g++ && apk add cmake 
+# Copy test environments to image
+COPY ./test/ .
+# Add non-root user
+RUN addgroup -S testgroup && adduser -S testuser -G testgroup
+# Change the current user to created non-root user
+USER testuser
+
+
